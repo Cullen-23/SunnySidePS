@@ -344,7 +344,7 @@
             right: 20px;
         }
 
-        /* ===== ABOUT ===== */
+        /* ===== ABOUT IMAGE CAROUSEL ===== */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -357,22 +357,88 @@
             font-size: 1.1rem;
         }
 
-        .about-image .image-placeholder {
+        .about-image-carousel {
+            position: relative;
             width: 100%;
-            height: 300px;
-            background-color: #e9ecef;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: #888;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
 
-        .about-image .image-placeholder i {
-            font-size: 4rem;
-            margin-bottom: 15px;
-            color: #ccc;
+        .about-image-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .about-image-slide.active {
+            opacity: 1;
+        }
+
+        .about-image-slide.about-slide-1 {
+            background-image: url('IMG-20251211-WA0017.jpg');
+        }
+
+        .about-image-slide.about-slide-2 {
+            background-image: url('IMG-20251211-WA0016.jpg');
+        }
+
+        .about-image-slide.about-slide-3 {
+            background-image: url('IMG_5962.JPG');
+        }
+
+        .about-image-slide.about-slide-4 {
+            background-image: url('IMG_4780.JPG');
+        }
+
+        .about-carousel-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 2;
+            gap: 10px;
+        }
+
+        .about-carousel-dot {
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .about-carousel-dot.active {
+            background-color: #f6b93b;
+            transform: scale(1.3);
+        }
+
+        .about-carousel-dot:hover {
+            background-color: #fff;
+        }
+
+        .about-image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            padding: 30px 20px 20px;
+            font-size: 0.9rem;
+            font-style: italic;
+            text-align: center;
         }
 
         /* ===== VISION & MISSION ===== */
@@ -650,8 +716,8 @@
                 gap: 40px;
             }
             
-            .about-image .image-placeholder {
-                height: 250px;
+            .about-image-carousel {
+                height: 350px;
             }
         }
 
@@ -705,6 +771,10 @@
                 font-size: 1.2rem;
             }
             
+            .about-image-carousel {
+                height: 300px;
+            }
+            
             .footer-logo .logo-placeholder {
                 width: 50px;
                 height: 50px;
@@ -732,6 +802,10 @@
             
             .logo-text h1 {
                 font-size: 1.2rem;
+            }
+            
+            .about-image-carousel {
+                height: 250px;
             }
             
             .footer-links {
@@ -846,8 +920,7 @@
         </div>
     </div>
 
-    <!-- Rest of your content remains the same -->
-    <!-- About Section -->
+    <!-- About Section with Image Carousel -->
     <section class="section about" id="about">
         <div class="container">
             <h2 class="section-title">Welcome to Sunnyside Primary School</h2>
@@ -855,12 +928,33 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>At Sunnyside, we believe every child has a unique potential waiting to be discovered. Our experienced teachers, child-centered approach, and vibrant learning environment ensure that each student grows academically, socially, emotionally, and physically.</p>
-                    <p>We combine the Ugandan curriculum with modern teaching methodologies to prepare learners for a rapidly changing world.</p>
+                    <p>We combine the Ugandan curriculum with modern teaching methodologies to prepare learners for a rapidly changing world. Our campus features state-of-the-art facilities designed to inspire creativity and foster a love for learning.</p>
+                    <p>With a focus on individualized attention, we ensure that every child receives the support they need to reach their full potential, regardless of their academic starting point.</p>
                 </div>
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-school"></i>
-                        <p>School Image</p>
+                <div class="about-image-carousel">
+                    <!-- Slide 1 -->
+                    <div class="about-image-slide about-slide-1 active"></div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="about-image-slide about-slide-2"></div>
+                    
+                    <!-- Slide 3 -->
+                    <div class="about-image-slide about-slide-3"></div>
+                    
+                    <!-- Slide 4 -->
+                    <div class="about-image-slide about-slide-4"></div>
+                    
+                    <!-- Navigation Dots -->
+                    <div class="about-carousel-nav">
+                        <div class="about-carousel-dot active" data-slide="0"></div>
+                        <div class="about-carousel-dot" data-slide="1"></div>
+                        <div class="about-carousel-dot" data-slide="2"></div>
+                        <div class="about-carousel-dot" data-slide="3"></div>
+                    </div>
+                    
+                    <!-- Image Caption Overlay -->
+                    <div class="about-image-overlay">
+                        Our vibrant campus and learning facilities
                     </div>
                 </div>
             </div>
@@ -1050,7 +1144,7 @@
 
     <!-- Embedded JavaScript -->
     <script>
-        // Carousel Functionality
+        // Carousel Functionality for Hero Section
         class HeroCarousel {
             constructor() {
                 this.slides = document.querySelectorAll('.hero-slide');
@@ -1059,7 +1153,7 @@
                 this.nextBtn = document.getElementById('nextSlide');
                 this.currentSlide = 0;
                 this.slideInterval = null;
-                this.slideDuration = 5000; // 5 seconds per slide
+                this.slideDuration = 5000;
 
                 this.init();
             }
@@ -1096,14 +1190,11 @@
             }
 
             goToSlide(index) {
-                // Remove active class from current slide and dot
                 this.slides[this.currentSlide].classList.remove('active');
                 this.dots[this.currentSlide].classList.remove('active');
 
-                // Update current slide
                 this.currentSlide = index;
 
-                // Add active class to new slide and dot
                 this.slides[this.currentSlide].classList.add('active');
                 this.dots[this.currentSlide].classList.add('active');
             }
@@ -1119,7 +1210,7 @@
             }
 
             startAutoSlide() {
-                this.stopAutoSlide(); // Clear any existing interval
+                this.stopAutoSlide();
                 this.slideInterval = setInterval(() => {
                     this.nextSlide();
                 }, this.slideDuration);
@@ -1133,16 +1224,80 @@
             }
         }
 
-        // Initialize carousel when DOM is loaded
+        // Carousel Functionality for About Images
+        class AboutImageCarousel {
+            constructor() {
+                this.slides = document.querySelectorAll('.about-image-slide');
+                this.dots = document.querySelectorAll('.about-carousel-dot');
+                this.currentSlide = 0;
+                this.slideInterval = null;
+                this.slideDuration = 4000; // 4 seconds per slide - slightly faster than hero
+
+                this.init();
+            }
+
+            init() {
+                // Event listeners for dots
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        this.goToSlide(index);
+                    });
+                });
+
+                // Start auto slide
+                this.startAutoSlide();
+
+                // Pause auto slide on hover
+                const aboutCarousel = document.querySelector('.about-image-carousel');
+                aboutCarousel.addEventListener('mouseenter', () => {
+                    this.stopAutoSlide();
+                });
+
+                aboutCarousel.addEventListener('mouseleave', () => {
+                    this.startAutoSlide();
+                });
+            }
+
+            goToSlide(index) {
+                this.slides[this.currentSlide].classList.remove('active');
+                this.dots[this.currentSlide].classList.remove('active');
+
+                this.currentSlide = index;
+
+                this.slides[this.currentSlide].classList.add('active');
+                this.dots[this.currentSlide].classList.add('active');
+            }
+
+            nextSlide() {
+                const nextIndex = (this.currentSlide + 1) % this.slides.length;
+                this.goToSlide(nextIndex);
+            }
+
+            startAutoSlide() {
+                this.stopAutoSlide();
+                this.slideInterval = setInterval(() => {
+                    this.nextSlide();
+                }, this.slideDuration);
+            }
+
+            stopAutoSlide() {
+                if (this.slideInterval) {
+                    clearInterval(this.slideInterval);
+                    this.slideInterval = null;
+                }
+            }
+        }
+
+        // Initialize both carousels when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
-            const carousel = new HeroCarousel();
+            const heroCarousel = new HeroCarousel();
+            const aboutCarousel = new AboutImageCarousel();
 
             // Mobile Menu Toggle
             document.getElementById('mobileMenuBtn').addEventListener('click', function() {
                 const navMenu = document.getElementById('navMenu');
                 navMenu.classList.toggle('show');
                 
-                // Change icon
                 const icon = this.querySelector('i');
                 if (navMenu.classList.contains('show')) {
                     icon.classList.remove('fa-bars');
@@ -1196,17 +1351,13 @@
             document.getElementById('contactForm').addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                // Get form values
                 const name = this.querySelector('input[type="text"]').value;
                 const email = this.querySelector('input[type="email"]').value;
                 const subject = this.querySelectorAll('input[type="text"]')[1].value;
                 const message = this.querySelector('textarea').value;
                 
-                // In a real implementation, you would send this data to a server
-                // For now, we'll just show an alert
                 alert(`Thank you ${name}! Your message has been received. We will contact you at ${email} shortly.`);
                 
-                // Reset form
                 this.reset();
             });
 

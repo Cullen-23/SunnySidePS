@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunnyside Primary School - Kampala, Uganda</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/sun--v1.png">
+    
+    <!-- Embedded CSS -->
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #1a365d;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: #f6b93b;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #e9a825;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(246, 185, 59, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #1a365d;
+            border: 2px solid #1a365d;
+        }
+
+        .btn-secondary:hover {
+            background-color: #1a365d;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .highlight {
+            color: #f6b93b;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-placeholder {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            background: none;
+            border-radius: 0;
+        }
+
+        .school-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .logo-text h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            color: #1a365d;
+            line-height: 1.2;
+        }
+
+        .motto {
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #f6b93b;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #f6b93b;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: #1a365d;
+            cursor: pointer;
+        }
+
+        /* ===== HERO CAROUSEL ===== */
+        .hero-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-slide .slide-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .slide-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        /* Slide-specific styles */
+        .slide-1 .slide-background {
+            background-image: url('badge_colour_enhanced_white_bg.png');
+            background-color: #1a365d; /* Fallback color */
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .slide-2 .slide-background {
+            background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        }
+
+        .slide-3 .slide-background {
+            background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        }
+
+        .slide-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .slide-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Carousel navigation */
+        .carousel-nav {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 3;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            margin: 0 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .carousel-dot.active {
+            background-color: #f6b93b;
+            transform: scale(1.2);
+        }
+
+        .carousel-dot:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Carousel arrows */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 3;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-arrow:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .carousel-arrow.prev {
+            left: 20px;
+        }
+
+        .carousel-arrow.next {
+            right: 20px;
+        }
+
+        /* ===== ABOUT ===== */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .about-image .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+        }
+
+        .about-image .image-placeholder i {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+
+        /* ===== VISION & MISSION ===== */
+        .mission-vision {
+            background-color: #f0f7ff;
+        }
+
+        .vision-mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            color: #f6b93b;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #1a365d;
+        }
+
+        .card-text {
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        /* ===== AIMS ===== */
+        .aims-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .aim-item {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            border-left: 5px solid #f6b93b;
+        }
+
+        .aim-number {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            background-color: #f6b93b;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .aim-item h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #1a365d;
+        }
+
+        .aim-item p {
+            color: #666;
+        }
+
+        /* ===== VALUES ===== */
+        .values {
+            background-color: #f8f9fa;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .value-item {
+            background-color: #fff;
+            padding: 25px 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-item i {
+            font-size: 2.5rem;
+            color: #f6b93b;
+            margin-bottom: 15px;
+        }
+
+        .value-item h4 {
+            font-family: 'Poppins', sans-serif;
+            color: #1a365d;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3,
+        .contact-form h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #1a365d;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-detail i {
+            color: #f6b93b;
+            font-size: 1.3rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            margin-top: 30px;
+        }
+
+        .map-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #f6b93b;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: #1a365d;
+            color: #fff;
+            padding: 50px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo .logo-placeholder {
+            width: 60px;
+            height: 60px;
+            background-color: #fff;
+            margin-right: 15px;
+            border-radius: 0;
+        }
+
+        .footer-logo .school-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .footer-logo h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        .footer-logo p {
+            color: #ccc;
+            font-style: italic;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #f6b93b;
+        }
+
+        .footer-copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+            border-top: 1px solid #2d4a7a;
+            padding-top: 20px;
+            width: 100%;
+        }
+
+        .footer-copyright i {
+            color: #ff6b6b;
+            margin: 0 5px;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 992px) {
+            .slide-title {
+                font-size: 2.8rem;
+            }
+            
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .about-image .image-placeholder {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .slide-title {
+                font-size: 2.3rem;
+            }
+            
+            .slide-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .logo-placeholder {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-menu.show {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .vision-mission-grid,
+            .aims-grid,
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .carousel-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .footer-logo .logo-placeholder {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-container {
+                height: 80vh;
+            }
+            
+            .slide-title {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .logo-placeholder {
+                width: 50px;
+                height: 50px;
+                margin-right: 10px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.2rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .footer-logo .logo-placeholder {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .carousel-arrow {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .carousel-arrow.prev {
+                left: 10px;
+            }
+            
+            .carousel-arrow.next {
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo-placeholder">
+                    <img src="badge_colour_enhanced_white_bg.png" alt="Sunnyside Primary School Badge" class="school-logo">
+                </div>
+                <div class="logo-text">
+                    <h1>Sunnyside Primary School</h1>
+                    <p class="motto">Finding the Hero in Every Child</p>
+                </div>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#mission" class="nav-link">Mission</a>
+                <a href="#aims" class="nav-link">Aims</a>
+                <a href="#values" class="nav-link">Values</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Carousel -->
+    <div class="hero-container" id="home">
+        <!-- Slide 1: School Badge -->
+        <div class="hero-slide slide-1 active">
+            <div class="slide-background"></div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h2 class="slide-title">Raising an astute learner positioned for <span class="highlight">global excellence</span>.</h2>
+                <p class="slide-subtitle">A safe and secure environment where learning is fun, intellectually stimulating, and enables every learner to thrive.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Enquire Now</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Modern Learning Environment -->
+        <div class="hero-slide slide-2">
+            <div class="slide-background"></div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h2 class="slide-title">Modern Learning Environment</h2>
+                <p class="slide-subtitle">State-of-the-art facilities with interactive classrooms, science labs, and creative spaces that inspire young minds to explore and discover.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Schedule a Visit</a>
+                    <a href="#about" class="btn btn-secondary">View Facilities</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Holistic Development -->
+        <div class="hero-slide slide-3">
+            <div class="slide-background"></div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h2 class="slide-title">Holistic Child Development</h2>
+                <p class="slide-subtitle">Nurturing academic excellence alongside sports, arts, and character building to develop well-rounded individuals ready for tomorrow's challenges.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Join Our Community</a>
+                    <a href="#values" class="btn btn-secondary">Our Values</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Navigation -->
+        <div class="carousel-arrow prev" id="prevSlide">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="carousel-arrow next" id="nextSlide">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+
+        <div class="carousel-nav">
+            <div class="carousel-dot active" data-slide="0"></div>
+            <div class="carousel-dot" data-slide="1"></div>
+            <div class="carousel-dot" data-slide="2"></div>
+        </div>
+    </div>
+
+    <!-- Rest of your content remains the same -->
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title">Welcome to Sunnyside Primary School</h2>
+            <p class="section-subtitle">Located in Tega Zone, Nabbingo, Kampala — we are dedicated to holistic education that nurtures mind, body, and character.</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>At Sunnyside, we believe every child has a unique potential waiting to be discovered. Our experienced teachers, child-centered approach, and vibrant learning environment ensure that each student grows academically, socially, emotionally, and physically.</p>
+                    <p>We combine the Ugandan curriculum with modern teaching methodologies to prepare learners for a rapidly changing world.</p>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-school"></i>
+                        <p>School Image</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="section mission-vision" id="mission">
+        <div class="container">
+            <div class="vision-mission-grid">
+                <div class="card vision-card">
+                    <div class="card-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="card-title">Our Vision</h3>
+                    <p class="card-text">Raising an astute learner positioned for global excellence.</p>
+                </div>
+                <div class="card mission-card">
+                    <div class="card-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="card-title">Our Mission</h3>
+                    <p class="card-text">To provide a safe and secure environment, where learning is fun, intellectually stimulating enabling every learner to thrive academically, physically, socially and emotionally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aims & Objectives -->
+    <section class="section aims" id="aims">
+        <div class="container">
+            <h2 class="section-title">Our 7 Aims & Objectives</h2>
+            <p class="section-subtitle">We are committed to providing a dignified, enriching education for every child.</p>
+            <div class="aims-grid">
+                <div class="aim-item">
+                    <div class="aim-number">1</div>
+                    <h3>Safe & Happy Environment</h3>
+                    <p>Where children feel secure, fostering a thirst for learning through exploration and intellectual debate.</p>
+                </div>
+                <div class="aim-item">
+                    <div class="aim-number">2</div>
+                    <h3>Dignified Education</h3>
+                    <p>Education free from humiliation, intimidation and unhealthy competition for all learners.</p>
+                </div>
+                <div class="aim-item">
+                    <div class="aim-number">3</div>
+                    <h3>Individualized Attention</h3>
+                    <p>Empowering every child to reach their full potential regardless of academic strength.</p>
+                </div>
+                <div class="aim-item">
+                    <div class="aim-number">4</div>
+                    <h3>Reading Culture</h3>
+                    <p>Cultivating a love for reading as a stepping stone to lifelong learning.</p>
+                </div>
+                <div class="aim-item">
+                    <div class="aim-number">5</div>
+                    <h3>Culture of Excellence</h3>
+                    <p>Fostering excellence in young minds through high expectations and support.</p>
+                </div>
+                <div class="aim-item">
+                    <div class="aim-number">6</div>
+                    <h3>Compassionate Individuals</h3>
+                    <p>Nurturing compassion and genuine care for the global community.</p>
+                </div>
+                <div class="aim-item">
+                    <div class="aim-number">7</div>
+                    <h3>Values & Character</h3>
+                    <p>Through social emotional learning, we cultivate emotional intelligence and strong character.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="section values" id="values">
+        <div class="container">
+            <h2 class="section-title">Our Core Values</h2>
+            <p class="section-subtitle">The principles that guide our daily interactions and long-term goals.</p>
+            <div class="values-grid">
+                <div class="value-item">
+                    <i class="fas fa-church"></i>
+                    <h4>Reverence for God</h4>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Respect</h4>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-heart"></i>
+                    <h4>Empathy</h4>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-user-check"></i>
+                    <h4>Confidence</h4>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-brain"></i>
+                    <h4>Critical Thinking</h4>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-users"></i>
+                    <h4>Care for Community</h4>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Integrity</h4>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Innovativeness</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Visit Our School</h3>
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Tega Zone, Nabbingo, P.O.BOX 701396, Kampala — Uganda</p>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone"></i>
+                        <p>+256-758-926-559</p>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-globe"></i>
+                        <p>www.sunnysideschools.com</p>
+                    </div>
+                    <div class="map-placeholder">
+                        <i class="fas fa-map"></i>
+                        <p>Map Location</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-placeholder">
+                        <img src="badge_colour_enhanced_white_bg.png" alt="Sunnyside Primary School Badge" class="school-logo">
+                    </div>
+                    <div>
+                        <h3>Sunnyside Primary School</h3>
+                        <p>Finding the Hero in Every Child</p>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#mission">Mission</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2023 Sunnyside Primary School. All rights reserved.</p>
+                    <p>Designed with <i class="fas fa-heart"></i> for the future of Uganda's children.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Embedded JavaScript -->
+    <script>
+        // Carousel Functionality
+        class HeroCarousel {
+            constructor() {
+                this.slides = document.querySelectorAll('.hero-slide');
+                this.dots = document.querySelectorAll('.carousel-dot');
+                this.prevBtn = document.getElementById('prevSlide');
+                this.nextBtn = document.getElementById('nextSlide');
+                this.currentSlide = 0;
+                this.slideInterval = null;
+                this.slideDuration = 5000; // 5 seconds per slide
+
+                this.init();
+            }
+
+            init() {
+                // Event listeners for dots
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        this.goToSlide(index);
+                    });
+                });
+
+                // Event listeners for arrows
+                this.prevBtn.addEventListener('click', () => {
+                    this.prevSlide();
+                });
+
+                this.nextBtn.addEventListener('click', () => {
+                    this.nextSlide();
+                });
+
+                // Start auto slide
+                this.startAutoSlide();
+
+                // Pause auto slide on hover
+                const heroContainer = document.querySelector('.hero-container');
+                heroContainer.addEventListener('mouseenter', () => {
+                    this.stopAutoSlide();
+                });
+
+                heroContainer.addEventListener('mouseleave', () => {
+                    this.startAutoSlide();
+                });
+            }
+
+            goToSlide(index) {
+                // Remove active class from current slide and dot
+                this.slides[this.currentSlide].classList.remove('active');
+                this.dots[this.currentSlide].classList.remove('active');
+
+                // Update current slide
+                this.currentSlide = index;
+
+                // Add active class to new slide and dot
+                this.slides[this.currentSlide].classList.add('active');
+                this.dots[this.currentSlide].classList.add('active');
+            }
+
+            nextSlide() {
+                const nextIndex = (this.currentSlide + 1) % this.slides.length;
+                this.goToSlide(nextIndex);
+            }
+
+            prevSlide() {
+                const prevIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+                this.goToSlide(prevIndex);
+            }
+
+            startAutoSlide() {
+                this.stopAutoSlide(); // Clear any existing interval
+                this.slideInterval = setInterval(() => {
+                    this.nextSlide();
+                }, this.slideDuration);
+            }
+
+            stopAutoSlide() {
+                if (this.slideInterval) {
+                    clearInterval(this.slideInterval);
+                    this.slideInterval = null;
+                }
+            }
+        }
+
+        // Initialize carousel when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = new HeroCarousel();
+
+            // Mobile Menu Toggle
+            document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+                const navMenu = document.getElementById('navMenu');
+                navMenu.classList.toggle('show');
+                
+                // Change icon
+                const icon = this.querySelector('i');
+                if (navMenu.classList.contains('show')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+
+            // Active Navigation Link
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+            
+            function setActiveLink() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (window.scrollY >= (sectionTop - 100)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', setActiveLink);
+            
+            // Close mobile menu when clicking a link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const navMenu = document.getElementById('navMenu');
+                    const mobileBtn = document.getElementById('mobileMenuBtn');
+                    const icon = mobileBtn.querySelector('i');
+                    
+                    navMenu.classList.remove('show');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+
+            // Form Submission
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = this.querySelector('input[type="text"]').value;
+                const email = this.querySelector('input[type="email"]').value;
+                const subject = this.querySelectorAll('input[type="text"]')[1].value;
+                const message = this.querySelector('textarea').value;
+                
+                // In a real implementation, you would send this data to a server
+                // For now, we'll just show an alert
+                alert(`Thank you ${name}! Your message has been received. We will contact you at ${email} shortly.`);
+                
+                // Reset form
+                this.reset();
+            });
+
+            // Smooth scroll for all anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Initialize active link on page load
+            setActiveLink();
+        });
+    </script>
+</body>
+</html>

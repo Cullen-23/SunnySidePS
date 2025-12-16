@@ -384,19 +384,19 @@
         }
 
         .about-image-slide.about-slide-1 {
-            background-image: url('IMG-20251211-WA0017.jpg');
+            background-image: url('IMG_5922.JPG');
         }
 
         .about-image-slide.about-slide-2 {
-            background-image: url('IMG-20251211-WA0016.jpg');
+            background-image: url('https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');
         }
 
         .about-image-slide.about-slide-3 {
-            background-image: url('IMG_5962.JPG');
+            background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
         }
 
         .about-image-slide.about-slide-4 {
-            background-image: url('IMG_4780.JPG');
+            background-image: url('https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
         }
 
         .about-carousel-nav {
@@ -562,6 +562,244 @@
             color: #1a365d;
         }
 
+        /* ===== DAY AT SUNNYSIDE SECTION ===== */
+        .day-at-sunnyside {
+            background-color: #fffbf0;
+        }
+
+        .day-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr; /* Carousel larger, content smaller */
+            gap: 60px;
+            align-items: start;
+        }
+
+        .day-features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .day-feature {
+            background-color: #fff;
+            padding: 25px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #f6b93b;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            height: 100%;
+        }
+
+        .day-feature i {
+            font-size: 2.2rem;
+            color: #f6b93b;
+            margin-bottom: 15px;
+        }
+
+        .day-feature h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #1a365d;
+        }
+
+        .day-feature p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* DAY IMAGE CAROUSEL (LEFT SIDE - LARGER) */
+        .day-image-carousel {
+            position: relative;
+            width: 100%;
+            height: 500px; /* Increased height for larger carousel */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .day-image-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .day-image-slide.active {
+            opacity: 1;
+        }
+
+        .day-image-slide.day-slide-1 {
+            background-image: url('IMG_4750.JPG');
+        }
+
+        .day-image-slide.day-slide-2 {
+            background-image: url('IMG_4780.JPG');
+        }
+
+        .day-image-slide.day-slide-3 {
+            background-image: url('IMG_4780.JPG');
+        }
+
+        .day-image-slide.day-slide-4 {
+            background-image: url('IMG_4747.JPG');
+        }
+
+        .day-carousel-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 2;
+            gap: 10px;
+        }
+
+        .day-carousel-dot {
+            width: 12px;
+            height: 12px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .day-carousel-dot.active {
+            background-color: #f6b93b;
+            transform: scale(1.5);
+        }
+
+        .day-carousel-dot:hover {
+            background-color: #fff;
+        }
+
+        .day-image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 40px 25px 25px;
+            font-size: 1rem;
+            font-style: italic;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .day-content-right {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .day-intro {
+            margin-bottom: 30px;
+        }
+
+        .day-intro h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #1a365d;
+        }
+
+        .day-intro p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* ===== WHY CHOOSE SUNNYSIDE SECTION ===== */
+        .why-choose {
+            background-color: #f0f7ff;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .why-card {
+            background-color: #fff;
+            padding: 35px 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
+            border-bottom: 4px solid #f6b93b;
+        }
+
+        .why-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .why-card i {
+            font-size: 2.8rem;
+            color: #f6b93b;
+            margin-bottom: 20px;
+        }
+
+        .why-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #1a365d;
+        }
+
+        .why-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* ===== FINAL INVITATION SECTION ===== */
+        .final-invitation {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1a365d 0%, #2d4a7a 100%);
+            color: white;
+        }
+
+        .invitation-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .invitation-content h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .invitation-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .invitation-tagline {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #f6b93b;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
         /* ===== CONTACT ===== */
         .contact-container {
             display: grid;
@@ -711,13 +949,27 @@
             }
             
             .about-content,
-            .contact-container {
+            .contact-container,
+            .day-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
             
             .about-image-carousel {
                 height: 350px;
+            }
+            
+            .day-image-carousel {
+                height: 400px;
+                order: 1; /* Put carousel first on mobile */
+            }
+            
+            .day-content-right {
+                order: 2; /* Put content second on mobile */
+            }
+            
+            .day-features {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -761,7 +1013,8 @@
             
             .vision-mission-grid,
             .aims-grid,
-            .values-grid {
+            .values-grid,
+            .why-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -775,9 +1028,29 @@
                 height: 300px;
             }
             
+            .day-image-carousel {
+                height: 350px;
+            }
+            
             .footer-logo .logo-placeholder {
                 width: 50px;
                 height: 50px;
+            }
+            
+            .invitation-content h2 {
+                font-size: 2rem;
+            }
+            
+            .invitation-content p {
+                font-size: 1.1rem;
+            }
+            
+            .invitation-tagline {
+                font-size: 1.5rem;
+            }
+            
+            .day-features {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -808,6 +1081,10 @@
                 height: 250px;
             }
             
+            .day-image-carousel {
+                height: 280px;
+            }
+            
             .footer-links {
                 flex-direction: column;
                 gap: 15px;
@@ -831,6 +1108,18 @@
             .carousel-arrow.next {
                 right: 10px;
             }
+            
+            .invitation-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .invitation-content p {
+                font-size: 1rem;
+            }
+            
+            .invitation-tagline {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
@@ -851,6 +1140,8 @@
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#mission" class="nav-link">Mission</a>
+                <a href="#day" class="nav-link">Daily Life</a>
+                <a href="#why-choose" class="nav-link">Why Us</a>
                 <a href="#aims" class="nav-link">Aims</a>
                 <a href="#values" class="nav-link">Values</a>
                 <a href="#contact" class="nav-link">Contact</a>
@@ -983,6 +1274,109 @@
         </div>
     </section>
 
+    <!-- A Day at Sunnyside Section - REVERSED LAYOUT -->
+    <section class="section day-at-sunnyside" id="day">
+        <div class="container">
+            <h2 class="section-title">A Day at Sunnyside: Holistic Development</h2>
+            <p class="section-subtitle">Our curriculum emphasizes academic excellence alongside physical, social, and emotional growth.</p>
+            
+            <div class="day-content">
+                <!-- CAROUSEL ON LEFT (LARGER) -->
+                <div class="day-image-carousel">
+                    <!-- Slide 1 -->
+                    <div class="day-image-slide day-slide-1 active"></div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="day-image-slide day-slide-2"></div>
+                    
+                    <!-- Slide 3 -->
+                    <div class="day-image-slide day-slide-3"></div>
+                    
+                    <!-- Slide 4 -->
+                    <div class="day-image-slide day-slide-4"></div>
+                    
+                    <!-- Navigation Dots -->
+                    <div class="day-carousel-nav">
+                        <div class="day-carousel-dot active" data-slide="0"></div>
+                        <div class="day-carousel-dot" data-slide="1"></div>
+                        <div class="day-carousel-dot" data-slide="2"></div>
+                        <div class="day-carousel-dot" data-slide="3"></div>
+                    </div>
+                    
+                    <!-- Image Caption Overlay -->
+                    <div class="day-image-overlay">
+                        Daily Life at Sunnyside - Where Learning Comes Alive
+                    </div>
+                </div>
+
+                <!-- CONTENT ON RIGHT -->
+                <div class="day-content-right">
+                    <div class="day-intro">
+                        <h3>Holistic Learning Experience</h3>
+                        <p>Learning is made fun through hands-on activities, intellectual debates, and personalized support. We prioritize holistic development to ensure every child grows into a well-rounded individual prepared for life's challenges.</p>
+                    </div>
+                    
+                    <div class="day-features">
+                        <div class="day-feature">
+                            <i class="fas fa-user-graduate"></i>
+                            <h4>Individualized Attention</h4>
+                            <p>Tailored support to help every child shine at their own pace with personalized learning plans.</p>
+                        </div>
+                        <div class="day-feature">
+                            <i class="fas fa-book-reader"></i>
+                            <h4>Reading Culture</h4>
+                            <p>Encouraging a love for books and lifelong learning from early age through our vibrant library.</p>
+                        </div>
+                        <div class="day-feature">
+                            <i class="fas fa-heart"></i>
+                            <h4>Social-Emotional Learning</h4>
+                            <p>Building emotional intelligence, empathy, and compassion through structured programs.</p>
+                        </div>
+                        <div class="day-feature">
+                            <i class="fas fa-running"></i>
+                            <h4>Play & Physical Activity</h4>
+                            <p>Balanced with outdoor exploration, sports, and creative play for physical development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Sunnyside Section -->
+    <section class="section why-choose" id="why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Choose Sunnyside Primary School?</h2>
+            <p class="section-subtitle">Discover what makes our school the perfect choice for your child's educational journey</p>
+            
+            <div class="why-grid">
+                <div class="why-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Safe & Inclusive Environment</h3>
+                    <p>A secure, inclusive environment free from intimidation, humiliation, and unhealthy competition where every child feels valued and respected.</p>
+                </div>
+                
+                <div class="why-card">
+                    <i class="fas fa-globe-africa"></i>
+                    <h3>Global Excellence Focus</h3>
+                    <p>Preparing learners for global opportunities with a curriculum that develops critical thinking, innovation, and adaptability.</p>
+                </div>
+                
+                <div class="why-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Emotional Intelligence</h3>
+                    <p>Cultivating emotional intelligence and strong character through dedicated social-emotional learning programs.</p>
+                </div>
+                
+                <div class="why-card">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Community Care</h3>
+                    <p>Nurturing compassion and genuine care for the global community, developing socially responsible individuals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Aims & Objectives -->
     <section class="section aims" id="aims">
         <div class="container">
@@ -1070,6 +1464,18 @@
         </div>
     </section>
 
+    <!-- Final Invitation Section -->
+    <section class="final-invitation">
+        <div class="container">
+            <div class="invitation-content">
+                <h2>We Invite You to Visit Sunnyside Primary School</h2>
+                <p>Come and see our vision in action. Contact us to arrange a tour and discover how we can partner in your child's educational journey.</p>
+                <a href="#contact" class="btn btn-primary" style="background-color: #fff; color: #1a365d;">Schedule a Visit Today</a>
+                <div class="invitation-tagline">Finding the Hero in Every Child<br>Sunnyside Primary School — Where Learning Thrives</div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact & Footer -->
     <section class="section contact" id="contact">
         <div class="container">
@@ -1132,6 +1538,10 @@
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
                     <a href="#mission">Mission</a>
+                    <a href="#day">Daily Life</a>
+                    <a href="#why-choose">Why Us</a>
+                    <a href="#aims">Aims</a>
+                    <a href="#values">Values</a>
                     <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-copyright">
@@ -1231,7 +1641,7 @@
                 this.dots = document.querySelectorAll('.about-carousel-dot');
                 this.currentSlide = 0;
                 this.slideInterval = null;
-                this.slideDuration = 4000; // 4 seconds per slide - slightly faster than hero
+                this.slideDuration = 4000;
 
                 this.init();
             }
@@ -1288,10 +1698,75 @@
             }
         }
 
-        // Initialize both carousels when DOM is loaded
+        // Carousel Functionality for Day Images
+        class DayImageCarousel {
+            constructor() {
+                this.slides = document.querySelectorAll('.day-image-slide');
+                this.dots = document.querySelectorAll('.day-carousel-dot');
+                this.currentSlide = 0;
+                this.slideInterval = null;
+                this.slideDuration = 3500;
+
+                this.init();
+            }
+
+            init() {
+                // Event listeners for dots
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        this.goToSlide(index);
+                    });
+                });
+
+                // Start auto slide
+                this.startAutoSlide();
+
+                // Pause auto slide on hover
+                const dayCarousel = document.querySelector('.day-image-carousel');
+                dayCarousel.addEventListener('mouseenter', () => {
+                    this.stopAutoSlide();
+                });
+
+                dayCarousel.addEventListener('mouseleave', () => {
+                    this.startAutoSlide();
+                });
+            }
+
+            goToSlide(index) {
+                this.slides[this.currentSlide].classList.remove('active');
+                this.dots[this.currentSlide].classList.remove('active');
+
+                this.currentSlide = index;
+
+                this.slides[this.currentSlide].classList.add('active');
+                this.dots[this.currentSlide].classList.add('active');
+            }
+
+            nextSlide() {
+                const nextIndex = (this.currentSlide + 1) % this.slides.length;
+                this.goToSlide(nextIndex);
+            }
+
+            startAutoSlide() {
+                this.stopAutoSlide();
+                this.slideInterval = setInterval(() => {
+                    this.nextSlide();
+                }, this.slideDuration);
+            }
+
+            stopAutoSlide() {
+                if (this.slideInterval) {
+                    clearInterval(this.slideInterval);
+                    this.slideInterval = null;
+                }
+            }
+        }
+
+        // Initialize all carousels when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             const heroCarousel = new HeroCarousel();
             const aboutCarousel = new AboutImageCarousel();
+            const dayCarousel = new DayImageCarousel();
 
             // Mobile Menu Toggle
             document.getElementById('mobileMenuBtn').addEventListener('click', function() {

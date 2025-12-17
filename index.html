@@ -483,6 +483,242 @@
             font-size: 1.1rem;
         }
 
+        /* ===== OUR TEAM SECTION ===== */
+        .our-team {
+            background-color: #fffbf0;
+        }
+
+        .team-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .team-tab {
+            padding: 12px 25px;
+            background-color: #fff;
+            border: 2px solid #e9ecef;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #555;
+            transition: all 0.3s;
+        }
+
+        .team-tab.active {
+            background-color: #f6b93b;
+            color: white;
+            border-color: #f6b93b;
+        }
+
+        .team-tab:hover:not(.active) {
+            background-color: #f0f7ff;
+            border-color: #1a365d;
+        }
+
+        /* Team Carousel Container */
+        .team-carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0 60px;
+        }
+
+        /* Horizontal Carousel for Desktop & Tablet */
+        .team-carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            gap: 30px;
+            padding: 10px;
+        }
+
+        .team-card {
+            flex: 0 0 calc(33.333% - 20px); /* 3 cards per row on desktop */
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            min-width: 0; /* Prevents flex item overflow */
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .team-img {
+            width: 100%;
+            height: 250px;
+            background-color: #f0f7ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-img i {
+            font-size: 5rem;
+            color: #ddd;
+        }
+
+        .team-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .team-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: #1a365d;
+        }
+
+        .team-role {
+            color: #f6b93b;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .team-qualification {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .team-bio {
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Carousel Navigation for Desktop */
+        .team-carousel-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            gap: 20px;
+        }
+
+        .team-carousel-arrow {
+            background-color: #f6b93b;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .team-carousel-arrow:hover {
+            background-color: #e9a825;
+            transform: scale(1.1);
+        }
+
+        .team-carousel-arrow:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .team-carousel-dots {
+            display: flex;
+            gap: 10px;
+        }
+
+        .team-carousel-dot {
+            width: 12px;
+            height: 12px;
+            background-color: #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .team-carousel-dot.active {
+            background-color: #f6b93b;
+            transform: scale(1.2);
+        }
+
+        /* Vertical Carousel for Mobile */
+        .vertical-team-carousel {
+            display: none;
+            flex-direction: column;
+            gap: 25px;
+            max-height: 600px;
+            overflow-y: auto;
+            padding: 10px 5px 40px;
+            scroll-behavior: smooth;
+        }
+
+        .vertical-team-carousel::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .vertical-team-carousel::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .vertical-team-carousel::-webkit-scrollbar-thumb {
+            background: #f6b93b;
+            border-radius: 10px;
+        }
+
+        .vertical-team-carousel::-webkit-scrollbar-thumb:hover {
+            background: #e9a825;
+        }
+
+        .vertical-team-carousel .team-card {
+            flex: 0 0 auto;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        /* Vertical Carousel Navigation for Mobile */
+        .vertical-team-nav {
+            display: none;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 15px;
+        }
+
+        .vertical-team-nav button {
+            background-color: #f6b93b;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .vertical-team-nav button:hover {
+            background-color: #e9a825;
+        }
+
+        .vertical-team-nav button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
         /* ===== AIMS ===== */
         .aims-grid {
             display: grid;
@@ -971,6 +1207,11 @@
             .day-features {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
+            /* Team Carousel adjustments for tablet */
+            .team-card {
+                flex: 0 0 calc(50% - 15px); /* 2 cards per row on tablet */
+            }
         }
 
         @media (max-width: 768px) {
@@ -1051,6 +1292,39 @@
             
             .day-features {
                 grid-template-columns: 1fr;
+            }
+            
+            .team-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .team-tab {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+            
+            /* Switch to vertical carousel on mobile */
+            .team-carousel {
+                display: none;
+            }
+            
+            .vertical-team-carousel {
+                display: flex;
+            }
+            
+            .team-carousel-nav {
+                display: none;
+            }
+            
+            .vertical-team-nav {
+                display: flex;
+            }
+            
+            .team-card {
+                flex: 0 0 auto;
+                width: 100%;
             }
         }
 
@@ -1141,6 +1415,7 @@
                 <a href="#about" class="nav-link">About</a>
                 <a href="#mission" class="nav-link">Mission</a>
                 <a href="#day" class="nav-link">Daily Life</a>
+                <a href="#team" class="nav-link">Our Team</a>
                 <a href="#why-choose" class="nav-link">Why Us</a>
                 <a href="#aims" class="nav-link">Aims</a>
                 <a href="#values" class="nav-link">Values</a>
@@ -1343,6 +1618,160 @@
         </div>
     </section>
 
+    <!-- Our Team Section -->
+    <section class="section our-team" id="team">
+        <div class="container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <p class="section-subtitle">Dedicated professionals committed to nurturing the hero in every child</p>
+            
+            <div class="team-tabs">
+                <div class="team-tab active" data-category="all">All Staff</div>
+                <div class="team-tab" data-category="administration">Administration</div>
+                <div class="team-tab" data-category="teachers">Teaching Staff</div>
+                <div class="team-tab" data-category="support">Support Staff</div>
+            </div>
+            
+            <div class="team-carousel-container">
+                <!-- Horizontal Carousel for Desktop/Tablet -->
+                <div class="team-carousel" id="teamCarousel">
+                    <!-- Administrator 1 -->
+                    <div class="team-card" data-category="administration">
+                        <div class="team-img">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="team-content">
+                            <!-- <h3 class="team-name">Mr. John K. Mugisha</h3>
+                            <p class="team-role">Head Teacher / Director</p>
+                            <p class="team-qualification">M.Ed Educational Leadership, B.Ed Primary Education</p>
+                            <p class="team-bio">With over 15 years of experience in primary education, Mr. Mugisha leads with a vision for holistic child development and academic excellence.</p> -->
+                        </div>
+                    </div>
+                    
+                    <!-- Administrator 2 -->
+                    <div class="team-card" data-category="administration">
+                        <div class="team-img">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="team-content">
+                            <!-- <h3 class="team-name">Mrs. Sarah N. Katumba</h3>
+                            <p class="team-role">Deputy Head Teacher</p>
+                            <p class="team-qualification">M.Ed Curriculum Studies, B.Ed Early Childhood Education</p>
+                            <p class="team-bio">Specializing in curriculum development and teacher mentorship, Mrs. Katumba ensures our teaching methods remain innovative and effective.</p> -->
+                        </div>
+                    </div>
+                    
+                    <!-- Teacher 1 -->
+                    <div class="team-card" data-category="teachers">
+                        <div class="team-img">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="team-content">
+                            <!-- <h3 class="team-name">Ms. Grace A. Namutebi</h3>
+                            <p class="team-role">Senior Teacher - P.1-P.3</p>
+                            <p class="team-qualification">B.Ed Primary Education, Diploma in Child Psychology</p>
+                            <p class="team-bio">Specializing in early childhood development, Ms. Namutebi creates engaging learning environments for our youngest learners.</p> -->
+                        </div>
+                    </div>
+                    
+                    <!-- Teacher 2 -->
+                    <div class="team-card" data-category="teachers">
+                        <div class="team-img">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="team-content">
+                            <!-- <h3 class="team-name">Mr. David S. Ochieng</h3>
+                            <p class="team-role">Mathematics Coordinator</p>
+                            <p class="team-qualification">B.Sc Mathematics, PGDE</p>
+                            <p class="team-bio">With a passion for making mathematics fun and accessible, Mr. Ochieng develops creative teaching methods that build strong numerical foundations.</p> -->
+                        </div>
+                    </div>
+                    
+                    <!-- Teacher 3 -->
+                    <div class="team-card" data-category="teachers">
+                        <div class="team-img">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="team-content">
+                            <!-- <h3 class="team-name">Mrs. Fiona K. Mbabazi</h3>
+                            <p class="team-role">Literacy & Language Arts Lead</p>
+                            <p class="team-qualification">B.A Literature, PGDE, Certificate in Reading Instruction</p>
+                            <p class="team-bio">Dedicated to fostering a love for reading, Mrs. Mbabazi oversees our school's literacy programs and library activities.</p> -->
+                        </div>
+                    </div>
+                    
+                    <!-- Support Staff 1 -->
+                    <div class="team-card" data-category="support">
+                        <div class="team-img">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <div class="team-content">
+                            <!-- <h3 class="team-name">Mrs. Mary J. Nalwoga</h3>
+                            <p class="team-role">School Counselor</p>
+                            <p class="team-qualification">M.A Counseling Psychology, Certificate in Child Therapy</p>
+                            <p class="team-bio">Providing social-emotional support to students, Mrs. Nalwoga helps children develop resilience, empathy, and emotional intelligence.</p> -->
+                        </div>
+                    </div>
+                    
+                    <!-- Support Staff 2 -->
+                    <div class="team-card" data-category="support">
+                        <div class="team-img">
+                            <i class="fas fa-user-nurse"></i>
+                        </div>
+                        <div class="team-content">
+                            <!-- <h3 class="team-name">Ms. Susan T. Akello</h3> -->
+                            <!-- <p class="team-role">School Nurse</p> -->
+                            <!-- <p class="team-qualification">Diploma in Nursing, Certificate in School Health</p> -->
+                            <!-- <p class="team-bio">Ensuring the health and wellbeing of our students, Ms. Akello provides first aid, health education, and wellness monitoring.</p> -->
+                        </div>
+                    </div>
+                    
+                    <!-- Administrator 3 -->
+                    <div class="team-card" data-category="administration">
+                        <div class="team-img">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="team-content">
+                            <!-- <h3 class="team-name">Mr. Robert W. Ssemakula</h3>
+                            <p class="team-role">Administrative Manager</p>
+                            <p class="team-qualification">BBA Business Administration, Diploma in Office Management</p>
+                            <p class="team-bio">Overseeing school operations and parent communications, Mr. Ssemakula ensures smooth administrative processes.</p> -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vertical Carousel for Mobile -->
+                <div class="vertical-team-carousel" id="verticalTeamCarousel">
+                    <!-- All cards will be inserted here by JavaScript -->
+                </div>
+                
+                <!-- Navigation for Horizontal Carousel (Desktop/Tablet) -->
+                <div class="team-carousel-nav">
+                    <button class="team-carousel-arrow" id="teamPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="team-carousel-dots" id="teamDots">
+                        <!-- Dots will be generated by JavaScript -->
+                    </div>
+                    
+                    <button class="team-carousel-arrow" id="teamNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Navigation for Vertical Carousel (Mobile) -->
+                <div class="vertical-team-nav">
+                    <button id="verticalPrev">
+                        <i class="fas fa-chevron-up"></i>
+                    </button>
+                    <button id="verticalNext">
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Why Choose Sunnyside Section -->
     <section class="section why-choose" id="why-choose">
         <div class="container">
@@ -1539,6 +1968,7 @@
                     <a href="#about">About</a>
                     <a href="#mission">Mission</a>
                     <a href="#day">Daily Life</a>
+                    <a href="#team">Our Team</a>
                     <a href="#why-choose">Why Us</a>
                     <a href="#aims">Aims</a>
                     <a href="#values">Values</a>
@@ -1553,6 +1983,251 @@
 
     <!-- Embedded JavaScript -->
     <script>
+        // Team Filter and Carousel Functionality
+        class TeamCarousel {
+            constructor() {
+                this.tabs = document.querySelectorAll('.team-tab');
+                this.cards = document.querySelectorAll('.team-card');
+                this.horizontalCarousel = document.getElementById('teamCarousel');
+                this.verticalCarousel = document.getElementById('verticalTeamCarousel');
+                this.teamPrevBtn = document.getElementById('teamPrev');
+                this.teamNextBtn = document.getElementById('teamNext');
+                this.verticalPrevBtn = document.getElementById('verticalPrev');
+                this.verticalNextBtn = document.getElementById('verticalNext');
+                this.teamDotsContainer = document.getElementById('teamDots');
+                
+                this.currentCategory = 'all';
+                this.currentHorizontalSlide = 0;
+                this.currentVerticalSlide = 0;
+                this.cardsPerSlide = 3; // For desktop
+                this.isMobile = window.innerWidth <= 768;
+                
+                this.init();
+            }
+            
+            init() {
+                // Clone cards for vertical carousel
+                this.cloneCardsForVerticalCarousel();
+                
+                // Initialize carousels
+                this.initHorizontalCarousel();
+                this.initVerticalCarousel();
+                
+                // Event listeners for tabs
+                this.tabs.forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        // Remove active class from all tabs
+                        this.tabs.forEach(t => t.classList.remove('active'));
+                        
+                        // Add active class to clicked tab
+                        tab.classList.add('active');
+                        
+                        // Get category to filter
+                        this.currentCategory = tab.getAttribute('data-category');
+                        
+                        // Filter cards
+                        this.filterCards(this.currentCategory);
+                    });
+                });
+                
+                // Adjust cards per slide based on screen size
+                this.updateCardsPerSlide();
+                window.addEventListener('resize', () => {
+                    this.isMobile = window.innerWidth <= 768;
+                    this.updateCardsPerSlide();
+                    this.filterCards(this.currentCategory);
+                });
+            }
+            
+            updateCardsPerSlide() {
+                if (window.innerWidth <= 768) {
+                    this.cardsPerSlide = 1; // Mobile
+                } else if (window.innerWidth <= 992) {
+                    this.cardsPerSlide = 2; // Tablet
+                } else {
+                    this.cardsPerSlide = 3; // Desktop
+                }
+                
+                // Update horizontal carousel
+                this.updateHorizontalCarousel();
+            }
+            
+            cloneCardsForVerticalCarousel() {
+                // Clear vertical carousel
+                this.verticalCarousel.innerHTML = '';
+                
+                // Clone all cards for vertical carousel
+                this.cards.forEach(card => {
+                    const clone = card.cloneNode(true);
+                    this.verticalCarousel.appendChild(clone);
+                });
+            }
+            
+            initHorizontalCarousel() {
+                // Create dots for horizontal carousel
+                this.createHorizontalDots();
+                
+                // Event listeners for horizontal navigation
+                this.teamPrevBtn.addEventListener('click', () => {
+                    this.prevHorizontalSlide();
+                });
+                
+                this.teamNextBtn.addEventListener('click', () => {
+                    this.nextHorizontalSlide();
+                });
+                
+                // Initialize horizontal carousel position
+                this.updateHorizontalCarousel();
+            }
+            
+            initVerticalCarousel() {
+                // Event listeners for vertical navigation
+                this.verticalPrevBtn.addEventListener('click', () => {
+                    this.prevVerticalSlide();
+                });
+                
+                this.verticalNextBtn.addEventListener('click', () => {
+                    this.nextVerticalSlide();
+                });
+                
+                // Initialize vertical carousel scroll
+                this.updateVerticalCarousel();
+            }
+            
+            createHorizontalDots() {
+                const totalSlides = Math.ceil(this.cards.length / this.cardsPerSlide);
+                this.teamDotsContainer.innerHTML = '';
+                
+                for (let i = 0; i < totalSlides; i++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'team-carousel-dot';
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        this.goToHorizontalSlide(i);
+                    });
+                    this.teamDotsContainer.appendChild(dot);
+                }
+            }
+            
+            updateHorizontalCarousel() {
+                const cardWidth = 100 / this.cardsPerSlide;
+                const translateX = -this.currentHorizontalSlide * 100;
+                this.horizontalCarousel.style.transform = `translateX(${translateX}%)`;
+                
+                // Update dots
+                const dots = document.querySelectorAll('.team-carousel-dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === this.currentHorizontalSlide);
+                });
+                
+                // Update button states
+                const totalSlides = Math.ceil(this.cards.length / this.cardsPerSlide);
+                this.teamPrevBtn.disabled = this.currentHorizontalSlide === 0;
+                this.teamNextBtn.disabled = this.currentHorizontalSlide === totalSlides - 1;
+            }
+            
+            updateVerticalCarousel() {
+                const cardHeight = this.verticalCarousel.children[0]?.offsetHeight || 350;
+                const gap = 25; // Same as CSS gap
+                const translateY = -this.currentVerticalSlide * (cardHeight + gap);
+                this.verticalCarousel.style.transform = `translateY(${translateY}px)`;
+                
+                // Update button states
+                const totalCards = this.verticalCarousel.children.length;
+                this.verticalPrevBtn.disabled = this.currentVerticalSlide === 0;
+                this.verticalNextBtn.disabled = this.currentVerticalSlide >= totalCards - 1;
+            }
+            
+            prevHorizontalSlide() {
+                if (this.currentHorizontalSlide > 0) {
+                    this.currentHorizontalSlide--;
+                    this.updateHorizontalCarousel();
+                }
+            }
+            
+            nextHorizontalSlide() {
+                const totalSlides = Math.ceil(this.cards.length / this.cardsPerSlide);
+                if (this.currentHorizontalSlide < totalSlides - 1) {
+                    this.currentHorizontalSlide++;
+                    this.updateHorizontalCarousel();
+                }
+            }
+            
+            goToHorizontalSlide(index) {
+                const totalSlides = Math.ceil(this.cards.length / this.cardsPerSlide);
+                if (index >= 0 && index < totalSlides) {
+                    this.currentHorizontalSlide = index;
+                    this.updateHorizontalCarousel();
+                }
+            }
+            
+            prevVerticalSlide() {
+                if (this.currentVerticalSlide > 0) {
+                    this.currentVerticalSlide--;
+                    this.updateVerticalCarousel();
+                }
+            }
+            
+            nextVerticalSlide() {
+                const totalCards = this.verticalCarousel.children.length;
+                if (this.currentVerticalSlide < totalCards - 1) {
+                    this.currentVerticalSlide++;
+                    this.updateVerticalCarousel();
+                }
+            }
+            
+            filterCards(category) {
+                let visibleCards = [];
+                
+                if (category === 'all') {
+                    // Show all cards
+                    visibleCards = Array.from(this.cards);
+                } else {
+                    // Filter by category
+                    visibleCards = Array.from(this.cards).filter(card => 
+                        card.getAttribute('data-category') === category
+                    );
+                }
+                
+                // Update card visibility
+                this.cards.forEach(card => {
+                    const shouldShow = visibleCards.includes(card);
+                    card.style.display = shouldShow ? 'block' : 'none';
+                });
+                
+                // Update vertical carousel
+                this.updateVerticalCarouselVisibility(category);
+                
+                // Reset carousel positions
+                this.currentHorizontalSlide = 0;
+                this.currentVerticalSlide = 0;
+                
+                // Update carousels
+                this.updateHorizontalCarousel();
+                this.updateVerticalCarousel();
+                
+                // Recreate dots for horizontal carousel
+                this.createHorizontalDots();
+            }
+            
+            updateVerticalCarouselVisibility(category) {
+                const verticalCards = this.verticalCarousel.children;
+                
+                if (category === 'all') {
+                    // Show all cards
+                    Array.from(verticalCards).forEach(card => {
+                        card.style.display = 'block';
+                    });
+                } else {
+                    // Filter by category
+                    Array.from(verticalCards).forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        card.style.display = cardCategory === category ? 'block' : 'none';
+                    });
+                }
+            }
+        }
+
         // Carousel Functionality for Hero Section
         class HeroCarousel {
             constructor() {
@@ -1761,8 +2436,9 @@
             }
         }
 
-        // Initialize all carousels when DOM is loaded
+        // Initialize all functionality when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
+            const teamCarousel = new TeamCarousel();
             const heroCarousel = new HeroCarousel();
             const aboutCarousel = new AboutImageCarousel();
             const dayCarousel = new DayImageCarousel();
